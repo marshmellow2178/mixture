@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <style>
@@ -32,7 +32,7 @@
 <body>
     <header>
         <figure class="logo">
-            <a href="index.html"><img src="../img/logo.png"></a>
+            <a href="index.html"><img src="img/logo.png"></a>
         </figure>
         <h1>Random box</h1>
     </header>
@@ -40,7 +40,7 @@
         <ul class="grid">
             <li>
                 <figure id="box">
-                    <img src="../img/box.png">
+                    <img src="img/box.png">
                 </figure>
                 <button class="activate" onclick="push();">OPEN</button>
             </li>
@@ -109,7 +109,7 @@
         }
         str += "</span>";
         document.querySelector('#result').innerHTML = str;
-        document.querySelector('#box').innerHTML = "<img src = '../img/opened.png'>";
+        document.querySelector('#box').innerHTML = "<img src = 'img/opened.png'>";
         const button = document.querySelectorAll(".activate")[0];
         button.disabled = true;
         document.querySelectorAll(".activate")[2].disabled = true;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="css/common.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
@@ -33,7 +33,7 @@
 <body>
     <header>
         <figure class="logo">
-            <a href="index.html"><img src="../img/logo.png"></a>
+            <a href="index.html"><img src="img/logo.png"></a>
         </figure>
         <h1>More</h1>
     </header>
@@ -55,7 +55,7 @@
 <script>
     $.ajax({
         type: "get",
-        url: "../data/projects.json",
+        url: "data/projects.json",
         dataType: "json",
         success: function (data) {
             let str = "";
