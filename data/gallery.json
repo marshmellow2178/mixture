@@ -1,0 +1,38 @@
+[
+    {
+        "name":"java",
+		"src":"../img/program/",
+		"title":"자바",
+		"desc": "프로그래밍 필수 언어"
+    },
+    {
+        "name":"eclipse",
+		"src":"../img/program/",
+		"title":"이클립스",
+		"desc": "자바를 시작하기에 최고의 IDE"
+    },
+    {
+        "name":"vscode",
+		"src":"../img/program/",
+		"title":"VS Code",
+		"desc": "프론트엔드를 맡겨주세요. 라이브 서버도 드립니다"
+    },
+    {
+        "name":"Spring_Boot",
+		"src":"../img/program/",
+		"title":"스프링 부트",
+		"desc": "무작정 따라하는 웹사이트 만들기"
+    },
+    {
+        "name":"MySQL",
+		"src":"../img/program/",
+		"title":"MySQL",
+		"desc": "데이터 저장소입니다. 제가 없다면 마리아DB를 찾아주세요"
+    },
+    {
+        "name":"github",
+		"src":"../img/program/",
+		"title":"GitHub Desktop",
+		"desc": "프로젝트를 모두와 공유해봅시다"
+    }
+]

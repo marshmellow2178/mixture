@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+
+<style>
+#result{
+    background-color: white;
+    height: 5vh;
+    line-height: 5vh;
+    width: 100%;
+}
+.legend{
+    color: red;
+}
+.unique{
+    color: orange;
+}
+.rare{
+    color: magenta;
+}
+.common{
+    color: green;
+}
+
+</style>
+<body>
+    <header>
+        <figure class="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </figure>
+        <h1>Random box</h1>
+    </header>
+    <main>
+        <ul class="grid">
+            <li>
+                <figure id="box">
+                    <img src="../img/box.png">
+                </figure>
+                <button class="activate" onclick="push();">OPEN</button>
+            </li>
+            <li class="result">
+                <div class="content">
+                    <h2>Your Result: </h2>
+                    <p id="result"><span></span></p>
+                </div>
+                <button class="activate" onclick="window.location.reload()">RETRY</button>
+            </li>
+            <li>
+                <table class="content">
+                    <tr>
+                        <th>등급</th>
+                        <th>확률</th>
+                    </tr>
+                    <tr>
+                        <td>레전드</td>
+                        <td>1%</td>
+                    </tr>
+                    <tr>
+                        <td>유니크</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>레어</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr>
+                        <td>보통</td>
+                        <td>20%</td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <div class="content">
+                    <p>유니크+ 뽑기권</p>
+                </div>
+                <button class="activate" onclick="unique_up();">GO</button>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
+
+<script>
+    let percent = Math.floor(Math.random() * 100);
+    let legend = "s급 기관총"; /* 1% */
+    let unique = "a급 장미칼"; /* 5% */
+    let rare = "b급 쇠파이프"; /* 10% */
+    let common = "c급 나무 몽둥이"; /* 30% */
+    let item = "막대기"; /* 64% */
+    function push() {
+        let str = "<span";
+        if(percent <= 0){
+            str += " class = legend>"+legend;
+        }else if(percent <=5){
+            str += " class = unique>"+unique;
+        }else if(percent<=15){
+            str += " class = rare>"+rare;
+        }else if(percent <=45){
+            str += " class = common>"+common;
+        }else{
+            str += " class = item>"+item;
+        }
+        str += "</span>";
+        document.querySelector('#result').innerHTML = str;
+        document.querySelector('#box').innerHTML = "<img src = '../img/opened.png'>";
+        const button = document.querySelectorAll(".activate")[0];
+        button.disabled = true;
+        document.querySelectorAll(".activate")[2].disabled = true;
+        button.innerHTML = "DONE";
+    }
+    function unique_up(){
+        percent = Math.floor(Math.random()*6);
+        push();
+    }
+</script>

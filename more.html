@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+    section a{
+        display: block;
+    }
+    section a::before{
+        display: inline-block;
+        vertical-align: middle;
+        content: "";
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .github::before {
+        background: url(../img/github.png) no-repeat;
+        background-size: contain;
+    }
+    .link::before {
+        background: url(../img/link.png) no-repeat;
+        background-size: contain;
+    }
+</style>
+
+<body>
+    <header>
+        <figure class="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </figure>
+        <h1>More</h1>
+    </header>
+    <main>
+        <section>
+            <h3>What is this place?</h3>
+            <p>Nothing to display here.<br>
+                Just Some Front-Ends.
+            </p>
+        </section>
+        <section id = "projects">
+            <h3>Projects</h3>
+            
+        </section>
+    </main>
+</body>
+
+</html>
+<script>
+    $.ajax({
+        type: "get",
+        url: "../data/projects.json",
+        dataType: "json",
+        success: function (data) {
+            let str = "";
+            $.each(data, function (idx, value) {
+                str += "<li><a href ='" + value.link + "' class = 'github'>" +
+                    value.name + "</a></li>";
+            });
+            $('#projects').append(str);
+        },
+        error: function () {
+            $('#projects').append('목록이 비어있습니다');
+        }
+    });
+</script>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let pcnt = 0;
+        let psize = 10;
+        $(window).on('load', function () {
+            getdata(1, psize);
+        });
+
+        function getdata(page, psize) {
+            let str = "";
+            $.ajax({
+                type: "get",
+                url: "../data/garbagesales.json",
+                dataType: "json",
+                success: function (data) {
+                    let count = Object.keys(data).length;
+                    pcnt = Math.ceil(count / psize);
+                    let sidx = (page - 1) * psize;
+                    $('tr').remove('.data');
+                    for (let i = sidx; i < Math.min(sidx + psize, count); i++) {
+                        str += '<tr class = data><td>' + data[i].판매처명 + '</td><td>' +
+                            data[i].주소 + "</td><td>" + data[i].데이터기준일 + "</td></tr>";
+                    }
+                    $('table').append(str);
+                    $('#page').text(' ' + page + ' ');
+                    $('#pcnt').text(' ' + pcnt + ' ');
+                },
+                error: function () {
+                    console.log("Error");
+                }
+            });
+        }
+
+        function prev() {
+            let page = Number($('#page').text());
+            if (page > 1) {
+                getdata(page - 1, psize);
+                $('#page').text(page - 1);
+            } else {
+                alert('첫 페이지입니다');
+            }
+        }
+
+        function next() {
+            let page = Number($('#page').text());
+            if (page < pcnt) {
+                getdata(page + 1, psize);
+                $('#page').text(page + 1);
+            } else {
+                alert('마지막 페이지입니다');
+            }
+        }
+
+        function changepsize(value) {
+            psize = value;
+            getdata(1, psize);
+        }
+    </script>
+    <style>
+        table th:nth-child(3) {
+            width: 10%;
+        }
+
+        table tr:nth-child(even) {
+            background-color: gainsboro;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: floralwhite;
+        }
+        select[name='psize']{
+            width: 60px;
+            font-size: 16px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <figure class="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </figure>
+        <h1>Board</h1>
+    </header>
+    <main>
+        <form class="searchform">
+            <label for="psize">표시할 개수</label>
+            <select name="psize" onchange="changepsize(this.value);">
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </form>
+
+        <table class="board">
+            <caption>서울시 종량제 봉투 판매소</caption>
+            <tr>
+                <th>판매처</th>
+                <th>주소</th>
+                <th>작성일</th>
+            </tr>
+
+        </table>
+        <div class="paging">
+            <button id="prev" onclick="prev()">&lt;</button>
+            <p><span id="page">1</span>of<span id="pcnt"></span>pages</p>
+            <button id="next" onclick="next();">&gt;</button>
+        </div>
+    </main>
+</body>
+
+</html>

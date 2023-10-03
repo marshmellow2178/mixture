@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <figure class="logo">
+            <a href="index.html"><img src="../img/logo.png"></a>
+        </figure>
+        <h1>Quiz</h1>
+    </header>
+    <style>
+        .exam {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            background-color: mintcream;
+            padding: 40px;
+            position: relative;
+        }
+
+        .exam li {
+            list-style-type: decimal;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .result {
+            display: none;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 70%;
+            height: 70vh;
+            padding: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+
+        .detail th,
+        .detail td {
+            width: 25%;
+            text-align: left;
+        }
+
+        .activate {
+            width: 100px;
+        }
+
+        .question {
+            border: 1px solid gray;
+            width: 80%;
+            padding: 5px;
+        }
+
+        .help {
+            top: 5%;
+            right: 3%;
+        }
+    </style>
+
+    <main>
+        <ol class="exam">
+            <button class="help" onclick="help();">?</button>
+            <table class="detail">
+                <tr>
+                    <th>시험 과목</th>
+                    <td>
+                        <select name="exam" onchange="load(this.value);">
+                            <option>선택하세요</option>
+                            <option value="1">샘플</option>
+                            <option value="2">네트워크</option>
+                            <option value="3">보안</option>
+                        </select>
+                    </td>
+                    <th>시험 시간</th>
+                    <td id="clock"></td>
+                </tr>
+            </table>
+        </ol>
+        <button class="activate" onclick="checkall();" disabled>채점</button>
+        <div class="popup_background">
+            
+        </div>
+        <div class="result">
+            <button class="close" onclick="window.location.reload()">X</button>
+            맞춘 문제: <span id="o"></span>/<span id="size"></span>
+            <br>
+            평가: <span id="grade"></span>
+        </div>
+
+        
+        <div class="manual">
+            <p>시험 과목을 선택하고 문제를 푼 뒤 채점 버튼을 누르세요</p>
+            <button class="activate" onclick="popup_close();">OK</button>
+        </div>
+    </main>
+</body>
+
+</html>
+<script>
+    let question, answer;
+    let correct = 0;
+    let seconds = 0;
+    let size = 0;
+    function load(value) {
+        $.ajax({
+            type: "get",
+            url: "../data/test/test" + value + ".json",
+            dataType: "json",
+            success: function (data) {
+                $('.exam').children('li').remove();
+                size = Number(Object.keys(data).length);
+                question = new Array(size);
+                answer = new Array(size);
+                for (let i = 0; i < size; i++) {
+                    question[i] = data[i].question;
+                    answer[i] = data[i].answer;
+                    let str = "<li><div class='question'>" + question[i] +
+                        "</div><input type='text' id = 'a" + i + "'></li>";
+                    $(".exam").append(str);
+                }
+                $('#size').text(size);
+                setclock();
+                setInterval(setclock, 1000);
+                $('.activate').attr('disabled', false);
+            },
+            error: function () {
+                alert("무엇인가 잘못되었습니다");
+                window.location.reload();
+            }
+        });
+    }
+
+    function setclock() {
+        $('#clock').text(Math.floor(seconds / 60) + " : " + seconds % 60);
+        seconds++;
+    }
+    function checkall() {
+        for (let i = 0; i < answer.length; i++) {
+            if ($('#a' + i).val() == answer[i]) {
+                correct++;
+            }
+        }
+        $('.popup_background').css('display','block');
+        $('.result').css('display', 'block');
+        let grade = '';
+        switch (Math.floor(correct / size * 10)) {
+            case 10:
+                grade = 'A+';
+                break;
+            case 9:
+                grade = 'A';
+                break;
+            case 8:
+                grade = 'B';
+                break;
+            case 7:
+                grade = 'C';
+                break;
+            case 6:
+                grade = 'D';
+                break;
+            default:
+                grade = 'F';
+                break;
+        }
+        $('#o').text(correct);
+        $('#grade').text(grade);
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        
+    }
+
+    function help() {
+        $('.popup_background').css('display','block');
+        $('.manual').css('display','block');
+    }
+    function popup_close() {
+        $('.popup_background').css('display','none');
+        $('.manual').css('display','none');
+    }
+</script>
