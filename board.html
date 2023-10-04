@@ -14,7 +14,6 @@
         });
 
         function getdata(page, psize) {
-            let str = "";
             $.ajax({
                 type: "get",
                 url: "data/garbagesales.json",
@@ -24,6 +23,7 @@
                     pcnt = Math.ceil(count / psize);
                     let sidx = (page - 1) * psize;
                     $('tr').remove('.data');
+                    let str = "";
                     for (let i = sidx; i < Math.min(sidx + psize, count); i++) {
                         str += '<tr class = data><td>' + data[i].판매처명 + '</td><td>' +
                             data[i].주소 + "</td><td>" + data[i].데이터기준일 + "</td></tr>";
