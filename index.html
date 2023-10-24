@@ -15,57 +15,118 @@
             <h1>Getting Started</h1>
         </header>
         <main>
-        <ul class = "grid">
-            <li>
-                <figure>
-                    <img src = "img/cal.png">
-                </figure>
-                <a href = "calculator.html" class="activate">Calculator</a>
-            </li>
-            <li>
-                <figure>
-                    <img src = "img/random.png">
-                </figure>
-                <a href = "random.html" class="activate">Random Box</a>
-            </li>
-            <li>
-                <figure>
-                    <img src = "img/board.png">
-                </figure>
-                <a href = "board.html" class="activate">Board</a>
-            </li>
-            <li>
-                <figure>
-                    <img src = "img/login.png">
-                </figure>
-                <a href = "login_form.html" class="activate">Login</a>
-            </li>
-            <li>
-                <figure>
-                    <img src = "img/calendar.png">
-                </figure>
-                <a href = "calendar.html" class="activate">Calendar</a>
-            </li>
-            <li>
-                <figure>
-                    <img src = "img/question.png">
-                </figure>
-                <a href = "quiz.html" class="activate">Quiz</a>
-            </li>
-            <li>
-                <figure>
-                    <img src = "img/gallery.png">
-                </figure>
-                <a href = "gallery.html" class="activate">Gallery</a>
-            </li>
-            <li>
-                <figure>
-                    <img src = "img/more.png">
-                </figure>
-                <a href = "more.html" class="activate">More</a>
-            </li>
-        </ul>
+            <ul class="grid">
+                <li>
+                    <figure><img src = "img/update.jpg"></figure>
+                    <a href = "updates.html" class = "activate">업데이트 내역</a>
+                </li>
+                <li>
+                    <figure><img src = "img/github.png"></figure>
+                    <a href = "https://github.com/marshmellow2178" class = "activate">소스코드</a>
+                </li>
+            </ul>
+
+            <div class="projects">
+            <article>
+                <figure><img src = "img/logo.png"></figure>
+                <h3>Samples</h3>
+                <a href = "samples.html">&gt;</a>
+                <p>프론트엔드 샘플 코드 모음</p>
+                <p class = "skill">
+                    <span>HTML</span>
+                    <span>css</span>
+                    <span>javascript</span>
+                    <span>jquery</span>
+                </p>
+                <p class="tools">
+                    <span>VS Code</span>
+                </p>
+            </article>
+            <article>
+                <figure><img src = "img/mall_demo.png"></figure>
+                <h3>Mall_Demo</h3>
+                <a href = "https://github.com/marshmellow2178/mall">&gt;</a>
+                <p>쇼핑몰 클론</p>
+                <p class = "skill">
+                <span>MySQL</span>
+                <span>Java</span>
+                <span>Spring Boot</span>
+                <span>JSP</span>
+                </p>
+                <p class="tools">
+                    <span>이클립스</span>
+                    <span>MySQL</span>
+                    <span>톰캣</span>
+                </p>
+            </article>
+            <article>
+                <figure><img src = "img/localcbt.png"></figure>
+                <h3>퀴즈 저장소<b id = "new">NEW</b></h3>
+                <a href = "http://34.22.65.82:8080/localcbt/index">&gt;</a>
+                <p>단답형 퀴즈 풀기</p>
+                <p class = "skill">
+                    <span>Thymleaf</span>
+                    <span>BootStrap</span>
+                    <span>Google Cloud</span>
+                </p>
+                <p class="tools">
+                    <span>구글 클라우드 플랫폼</span>
+                </p>
+            </article>
+
+        </div>
         </main>
     </body>
-
 </html>
+<style>
+    .projects{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    article{
+        width: 45%;
+        padding: 20px 10px;
+        border: 1px solid gray;
+        margin: 10px;
+    }
+    article h3{
+        display: inline-block;
+        padding: 10px 0;
+    }
+    article a{
+        display: inline-block;
+        background-color: dodgerblue;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 100%;
+        border-radius: 50%;
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+    }
+    article figure{
+        width: 200px;
+        float: left;
+    }
+    article span{
+        display: inline-block;
+        margin-top: 5px;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+    #new{
+        color: red;
+        display: inline-block;
+        margin: 0 5px;
+    }
+    .skill{
+        color: dodgerblue;
+        margin: 5px 0;
+    }
+    .tools{
+        color: gray;
+    }
+</style>
