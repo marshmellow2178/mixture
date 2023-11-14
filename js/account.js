@@ -32,7 +32,7 @@ function onRegisterSubmit(event){
     pwInput.value = "";
 
     if(savedUserData===null){
-        localStorage.setItem(GLOBAL.USERNAME, newUserData);
+        localStorage.setItem(GLOBAL.USERNAME, JSON.stringify(newUserData));
         sessionStorage.setItem(GLOBAL.USERNAME, JSON.stringify(newUserData));
         showStartMenu();    
     }else if(newUID === savedUserData.uid && newPW === savedUserData.pw){
