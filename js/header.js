@@ -24,9 +24,9 @@ const wifi = document.createElement("span");
 const wifiImg = document.createElement("img");
 
 if(navigator.onLine==true){
-    wifiImg.src = "/img/icons/wifi.svg";
+    wifiImg.src = `${window.location.origin}/img/icons/wifi.svg`;
 }else{
-    wifiImg.src = "/img/icons/wifi-off.svg";
+    wifiImg.src = `${window.location.origin}/img/icons/wifi-off.svg`;
 }
 wifi.appendChild(wifiImg);
 div_right.appendChild(wifi);
