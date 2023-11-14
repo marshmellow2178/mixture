@@ -11,6 +11,9 @@ https://marshmellow2178.github.io/mixture/
 ## 기능
 - 계산기
 - 달력
-- json 파일 출력하기
-- 랜덤박스
 - 단답형 문제풀이 기능
+
+## UPDATES(11.15)
+- 기간: 4일
+- 참고: 노마드 코더 강의[https://nomadcoders.co/javascript-for-beginners/lobby] 크롬 앱(Momentum) 클론
+- 디자인 수정 및 바닐라 자바스크립트 사용
