@@ -4,6 +4,6 @@ const bgList= [
 const todaysImage = bgList[Math.floor(Math.random()*bgList.length)];
 
 const bgImg = document.createElement("img");
-bgImg.src = `/img/backgrounds/${todaysImage}`;
+bgImg.src = `${pageContext.request.contextPath}/img/backgrounds/${todaysImage}`;
 bgImg.id = "bg-img";
 document.body.appendChild(bgImg); 
