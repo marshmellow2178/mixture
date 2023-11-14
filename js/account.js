@@ -18,28 +18,26 @@ function showStartMenu(){       //로그인 성공시 메인화면 보여주기
     startMenu.classList.remove(GLOBAL.HIDDEN_CLASSNAME);
 }
 
-function loginSuccess(uid, pw){     //saving in session
-    const newUserData = {
-        uid:uid,
-        pw:pw,
-    };
-    sessionStorage.setItem("userData", JSON.stringify(newUserData));
-    showStartMenu();
-}
-
 function onRegisterSubmit(event){   
     event.preventDefault();
     const newUID = uidInput.value;
     const newPW = pwInput.value;
     
+    const newUserData = {
+        uid:newUID,
+        pw:newPW,
+    };
+
     uidInput.value = "";
     pwInput.value = "";
 
     if(savedUserData===null){
-        localStorage.setItem("userData", newUserData);
-        loginSuccess(newUID, newPW);
+        localStorage.setItem(GLOBAL.USERNAME, newUserData);
+        sessionStorage.setItem(GLOBAL.USERNAME, JSON.stringify(newUserData));
+        showStartMenu();    
     }else if(newUID === savedUserData.uid && newPW === savedUserData.pw){
-        loginSuccess(newUID, newPW);
+        sessionStorage.setItem(GLOBAL.USERNAME, JSON.stringify(newUserData));
+        showStartMenu();
     }else{      //wrong account info--
         return;
     }
