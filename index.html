@@ -1,132 +1,70 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Home</title>
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="css/common.css">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+    </header>
 
-    <body>
-        <header>
-            <figure class="logo">
-                <a href="index.html"><img src="img/logo.png"></a>
-            </figure>
-            <h1>Getting Started</h1>
-        </header>
-        <main>
-            <ul class="grid">
+    <main>
+        <form id="register-form">
+            <legend>LOGIN</legend>
+            <input type="text" required maxlength="15" placeholder="ID">
+            <input type="password" required maxlength="10" placeholder="PW">
+            <br>
+            <input type="submit" value="REGISTER">
+        </form>
+        <div id="startmenu" class = "hidden">
+            <!--
+            <form id = "search-form">
+                <input type="search" placeholder="검색">
+            </form>-->
+            <ul id="application">
                 <li>
-                    <figure><img src = "img/update.jpg"></figure>
-                    <a href = "updates.html" class = "activate">업데이트 내역</a>
+                    <a href="momentum/index.html">
+                        <img src="img/app/chapp.jpg">
+                    </a>
+                    <p>Momentum</p>
+                </li>
+
+                <li>
+                    <a href="settings/settings.html">
+                        <img src = "img/app/settings.png">
+                    </a>
+                    <p>설정</p>
+                </li>
+
+                <li>
+                    <a href="calculator/calculator.html">
+                        <img src = "img/app/app.jpg">
+                    </a>
+                    <p>계산기</p>
                 </li>
                 <li>
-                    <figure><img src = "img/github.png"></figure>
-                    <a href = "https://github.com/marshmellow2178" class = "activate">소스코드</a>
+                    <a href="quiz/quiz.html">
+                        <img src = "img/app/app.jpg">
+                    </a>
+                    <p>퀴즈</p>
+                </li>
+                <li>
+                    <a href="calendar/calendar.html">
+                        <img src = "img/app/app.jpg">
+                    </a>
+                    <p>달력</p>
                 </li>
             </ul>
-
-            <div class="projects">
-            <article>
-                <figure><img src = "img/logo.png"></figure>
-                <h3>Samples</h3>
-                <a href = "samples.html">&gt;</a>
-                <p>프론트엔드 샘플 코드 모음</p>
-                <p class = "skill">
-                    <span>HTML</span>
-                    <span>css</span>
-                    <span>javascript</span>
-                    <span>jquery</span>
-                </p>
-                <p class="tools">
-                    <span>VS Code</span>
-                </p>
-            </article>
-            <article>
-                <figure><img src = "img/mall_demo.png"></figure>
-                <h3>Mall_Demo</h3>
-                <a href = "https://github.com/marshmellow2178/mall">&gt;</a>
-                <p>쇼핑몰 클론</p>
-                <p class = "skill">
-                <span>MySQL</span>
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>JSP</span>
-                </p>
-                <p class="tools">
-                    <span>이클립스</span>
-                    <span>MySQL</span>
-                    <span>톰캣</span>
-                </p>
-            </article>
-            <article>
-                <figure><img src = "img/localcbt.png"></figure>
-                <h3>퀴즈 저장소<b id = "new">NEW</b></h3>
-                <a href = "http://34.22.65.82:8080/localcbt/index">&gt;</a>
-                <p>단답형 퀴즈 풀기</p>
-                <p class = "skill">
-                    <span>Thymleaf</span>
-                    <span>BootStrap</span>
-                    <span>Google Cloud</span>
-                </p>
-                <p class="tools">
-                    <span>구글 클라우드 플랫폼</span>
-                </p>
-            </article>
-
         </div>
-        </main>
-    </body>
+    </main>
+    <footer>
+    </footer>
+    <script src="js/const.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/account.js"></script>   
+</body>
 </html>
-<style>
-    .projects{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-    article{
-        width: 45%;
-        padding: 20px 10px;
-        border: 1px solid gray;
-        margin: 10px;
-    }
-    article h3{
-        display: inline-block;
-        padding: 10px 0;
-    }
-    article a{
-        display: inline-block;
-        background-color: dodgerblue;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        line-height: 100%;
-        border-radius: 50%;
-        color: white;
-        font-weight: bold;
-        padding: 5px;
-    }
-    article figure{
-        width: 200px;
-        float: left;
-    }
-    article span{
-        display: inline-block;
-        margin-top: 5px;
-        padding: 5px;
-        border: 1px solid gray;
-        border-radius: 10px;
-    }
-    #new{
-        color: red;
-        display: inline-block;
-        margin: 0 5px;
-    }
-    .skill{
-        color: dodgerblue;
-        margin: 5px 0;
-    }
-    .tools{
-        color: gray;
-    }
-</style>

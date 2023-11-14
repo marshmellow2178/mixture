@@ -1,0 +1,45 @@
+@import url(../css/common.css);
+main{
+    padding: 40px 0;
+}
+.calculator{
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: gainsboro;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: 3px solid gray;
+}
+.calculator .formula{
+    width: 100%;
+    margin: 5px 5px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: right;
+    background-color: white;
+    color: black;
+}
+.calculator table td{
+    padding: 5px;
+    width: calc(400px / 5);
+}
+.calculator .numbers{
+    width: 60%;
+}
+.calculator .numbers button{
+    background-color: rgba(0, 0, 50, 0.7);
+}
+.calculator .op{
+    width: 40%;
+}
+.calculator .op button{
+    background-color: rgba(50, 0, 0, 0.7);
+}
+.calculator button{
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-radius: 10px;
+}

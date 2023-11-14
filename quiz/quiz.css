@@ -1,0 +1,15 @@
+@import url(../css/common.css);
+main{
+    padding-top: 40px;
+}
+#quiz-bg{
+    background-color: rgba(10, 10, 10, 0.4);
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+#quiz-result p{
+    margin: 20px 0;
+}
