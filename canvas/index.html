@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "canvas">
+        <canvas></canvas>
+    </div>
+    <menu>
+        <div>
+            <p>색</p>
+            <input type="color" id="color-input">
+            <ul id = "palette">
+                <li class="color-option" style="background-color: #eb3b5a" data-color = "#eb3b5a"></li>
+                <li class="color-option" style="background-color: #fa8231" data-color = "#fa8231"></li>
+                <li class="color-option" style="background-color: #f7b731" data-color = "#f7b731"></li>
+                <li class="color-option" style="background-color: #20bf6b" data-color = "#20bf6b"></li>
+                <li class="color-option" style="background-color: #0fb9b1" data-color = "#0fb9b1"></li>
+                <li class="color-option" style="background-color: #2d98da" data-color = "#2d98da"></li>
+                <li class="color-option" style="background-color: #3867d6" data-color = "#3867d6"></li>
+                <li class="color-option" style="background-color: #8854d0" data-color = "#8854d0"></li>
+                <li class="color-option" style="background-color: #ffffff" data-color = "#ffffff"></li>
+                <li class="color-option" style="background-color: #000000" data-color = "#000000"></li>
+            </ul>
+            <button id = "draw-option">채우기 모드</button>
+        </div>
+        <div>
+            <p>배경</p>
+            <label for="file-input">이미지 선택</label>
+            <input type="file" id="file-input" accept="img/*">
+            <button id = "bg-color">색 채우기</button>
+            <button id = "reload" disabled>새로고침</button>
+        </div>
+        <div>
+            <p>그리기</p>
+            <input type="range" id="line-width" min="1" max="10" value="5">
+            <p>선 굵기: <span id = "line-width-msg"></span>px</p>
+            <button id = "erase">지우개</button>
+        </div>
+        <div>
+            <p>텍스트</p>
+            <input type="text" id="text-input" placeholder="더블클릭해 입력"
+            value = "TEST">
+            <input type="range" id="font-size" min="10" max="80" value="24">
+            <p>크기: <span id = "font-size-msg"></span>px</p>
+            <input type="range" id="font-weight" min="100" max="900" value="400" step="100">
+            <p>굵기: <span id = "font-weight-msg"></span></p>
+            
+            <select id = "font-face">
+                <option value="serif">serif</option>
+                <option value="sans-serif">sans-serif</option>
+                <option value="monospace">monospace</option>
+                <option value="cursive">cursive</option>
+                <option value="fantasy">fantasy</option>
+                <option value="system-ui">system-ui</option>
+                <option value="ui-serif">ui-serif</option>
+                <option value="ui-sans-serif">ui-sans-serif</option>
+                <option value="ui-monospace">ui-monospace</option>
+                <option value="ui-rounded">ui-rounded</option>
+            </select>
+            <button id = "font-style">기울이기</button>
+        </div>
+        <div>
+            <button id = "reset">RESET</button>
+            <button id = "save">SAVE</button>
+        </div>
+    </menu>
+    <script src="script.js"></script>
+</body>
+</html>

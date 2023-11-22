@@ -1,84 +1,17 @@
 *{
     box-sizing: border-box;
-    font-size: 20px;
     padding: 0;
     margin: 0;
-}
-html{
-    color: white;
-    text-align: center;
-    overflow: hidden;
-}
-header, footer{
-    height: 40px;
-    padding: 5px 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-main{
-    height: calc(100vh - 80px);
-    margin: 0 40px;
 }
 li{
     list-style-type: none;
 }
-input{
-    color: white;
-    margin-top: 20px;
-}
-input[type=text], 
-input[type=password], 
-input[type=search]{
-    border: none;
-    border-bottom: 3px solid white;
-    background-color: transparent;
-}
-input:focus{
-    outline: none;
-}
-input::placeholder{
-    color: white;
-}
-button, input[type=submit]{
-    background-color: transparent;
-    border: none;
-    color: white;
-    margin-right: 10px;
-}
-input:disabled{
-    color: grey;
-    border-color: grey;
-}
 a{
     text-decoration: none;
-    color: white;
 }
 img{
     width: 100%;
 }
-#bg-img{
-    width: 100%;
-    min-height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    object-fit: cover;
-}
-.hidden{
-    display: none;
-}
-#popup-menu{
-    position: absolute;
-    bottom: 40px;
-    left: 0px;
-    padding: 40px;
-    text-align: left;
-    background-color: rgba(230, 230, 230, 0.8);
-    color: black;
-    width: 400px;
-    height: 80vh;
+main{
+    padding: 20px;
 }

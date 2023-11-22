@@ -1,5 +1,8 @@
 const greetings = document.querySelector("#greetings");
-const savedUsername = JSON.parse(sessionStorage.getItem("userData")).uid;
+const savedUsername = localStorage.getItem("username");
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+
 /*
 1st argument in eventListener
  = information autofilled about event just occured
@@ -7,8 +10,6 @@ const savedUsername = JSON.parse(sessionStorage.getItem("userData")).uid;
  = diffrent from event to event
 preventDefault = stops the def behavior of the browser
 */
-greetings.innerText = `Hello ${savedUsername}`; //variables + string
-
 const clock = document.querySelector("#clock");
 
 function getClock(){
@@ -40,3 +41,33 @@ function onGeoError(){
 }
 //get user's location
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
+function writeGreetings(){
+    greetings.classList.remove("hidden");
+    greetings.innerText = `Hello ${savedUsername}`; //variables + string
+}
+function onLoginSubmit(event){
+    event.preventDefault();
+    const uid = loginInput.value;
+    localStorage.setItem("username", uid);
+    loginForm.classList.add("hidden");
+    writeGreetings();
+} 
+loginForm.addEventListener("submit", onLoginSubmit);
+
+if(savedUsername !== null){
+    writeGreetings();
+}else{
+    loginForm.classList.remove("hidden");
+}
+
+const bgList= [
+    "1.jpg", "2.jpg"
+];
+const todaysImage = bgList[Math.floor(Math.random()*bgList.length)];
+
+const bgImg = document.createElement("img");
+bgImg.src = `img/${todaysImage}`;
+//서버 업로드시 이미지 경로지정
+bgImg.id = "bg-img";
+document.body.appendChild(bgImg); 

@@ -7,7 +7,7 @@ main{
     margin: 0 auto;
     padding: 10px 20px;
     text-align: center;
-    background-color: rgba(10, 10, 10, 0.7);
+    border: 3px solid black;
 }
 #calendar_date, #calendar_weekday{
     width: 350px;

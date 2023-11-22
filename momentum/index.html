@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Momentum App</title>
 </head>
 
 <body>
-    <header>
-
-    </header>
     <main>
+        <a href = "../index.html" id = "home">HOME</a>
+        <form id="login-form" class="hidden">
+            <p>이름을 입력하세요</p>
+            <input type="text" required maxlength="15" placeholder="ID">
+        </form>
         <div id = "weather">
             <span></span>
             <span></span>
@@ -20,10 +22,10 @@
 
         <h2 id = "clock">00:00:00</h2>
 
-        <h1 id = "greetings"></h1>
+        <h1 id = "greetings" class="hidden"></h1>
 
         <form id = "todo-form">
-            <input type="text" require placeholder="What's your plan today?">
+            <input type="text" required placeholder="오늘의 할 일">
         </form>
 
         <ul id = "todo-list">
@@ -34,16 +36,10 @@
             <br>
             <span></span>
         </div>
-
-        <button id = "reset">RESET</button>
     </main>
-<footer>
-
-</footer>
-<script src="../js/common.js"></script>
+    <script src="../js/common.js"></script>
     <script src="js/momentum.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/todo.js"></script>
 </body>
-
 </html>

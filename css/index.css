@@ -1,32 +1,15 @@
 @import url(common.css);
-#application{
+h1{
+    text-align: center;
+}
+ul{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 0;
+    justify-content: center;
+    gap: 10px;
 }
-#application li{
-    text-align: center;
-    width: 20%;
-    min-width: 100px;
-    padding: 10px;
-}
-#application li img{
-    border-radius: 20px;
+li{
     width: 100px;
-    height: 100px;
-}
-#search-form{
-    width: 100%;
-}
-#search-form input{
-    width: 80%;
-    height: 40px;
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-#register-form{
-    width: 30%;
-    margin: 100px auto;
+    text-align: center;
 }

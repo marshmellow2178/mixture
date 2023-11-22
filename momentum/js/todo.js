@@ -2,16 +2,6 @@ const toDoForm = document.querySelector("#todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.querySelector("#todo-list");
 
-const resetBtn = document.querySelector("#reset");
-resetBtn.addEventListener("click", resetTodos);
-resetBtn.classList.add("hidden");
-
-function resetTodos(){
-    if(confirm("Deleting all infos. continue?")){
-        localStorage.removeItem("todos");
-        toDoList.replaceChildren();
-    }
-}
 const TODOS_KEY = "todos";
 
 let todos = [];
@@ -27,7 +17,6 @@ function deleteToDo(event){     //event -> parentElement
     //delete if id is same
     saveToDos();
     li.remove();
-
 }
 
 function paintToDo(newToDoObject){
@@ -40,10 +29,7 @@ function paintToDo(newToDoObject){
     li.appendChild(button);
     li.appendChild(span);
     span.innerText = newToDoObject.text;
-    toDoList.appendChild(li);
-    if(resetBtn.classList.contains(GLOBAL.HIDDEN_CLASSNAME)){
-        resetBtn.classList.remove(GLOBAL.HIDDEN_CLASSNAME);
-    }
+    toDoList.appendChild(li)
 }
 
 function handleToDoSubmit(event){
