@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mixture/react-demo/static/css/main.beb019bc.css",
+    "main.js": "/mixture/react-demo/static/js/main.51d2e569.js",
+    "index.html": "/mixture/react-demo/index.html",
+    "main.beb019bc.css.map": "/mixture/react-demo/static/css/main.beb019bc.css.map",
+    "main.51d2e569.js.map": "/mixture/react-demo/static/js/main.51d2e569.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.beb019bc.css",
+    "static/js/main.51d2e569.js"
+  ]
+}
