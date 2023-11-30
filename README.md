@@ -20,7 +20,7 @@ https://marshmellow2178.github.io/mixture/
 - 기능: Todo list, 시계, 날씨
 
 ## UPDATES(11.22)
-- [그림판](!https://marshmellow2178.github.io/mixture/canvas)
+- [그림판](https://marshmellow2178.github.io/mixture/canvas)
 - 기간: 7일
 - 캔버스API
 
