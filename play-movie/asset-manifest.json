@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mixture/play-movie/static/css/main.dba7bf8d.css",
+    "main.js": "/mixture/play-movie/static/js/main.94880c1f.js",
+    "index.html": "/mixture/play-movie/index.html",
+    "main.dba7bf8d.css.map": "/mixture/play-movie/static/css/main.dba7bf8d.css.map",
+    "main.94880c1f.js.map": "/mixture/play-movie/static/js/main.94880c1f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dba7bf8d.css",
+    "static/js/main.94880c1f.js"
+  ]
+}
