@@ -25,7 +25,7 @@ https://marshmellow2178.github.io/mixture/
 - 캔버스API
 
 ## UPDATES(11.30)
-- [영화 검색](!https://marshmellow2178.github.io/mixture/play-movie)
+- [영화 검색](https://marshmellow2178.github.io/mixture/play-movie)
 - 기간: 7일
 - [영화 API](https://yts.mx/api#list_movies) 를 활용한 영화 검색 기능
 - React 사용
