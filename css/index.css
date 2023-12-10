@@ -3,10 +3,11 @@ h1{
     text-align: center;
 }
 ul{
-    width: 100%;
+    width: 80%;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
 }
 li{
